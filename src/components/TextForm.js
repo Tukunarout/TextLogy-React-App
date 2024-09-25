@@ -59,11 +59,11 @@ export default function TextForm(props) {
                 ? '#ad840b' 
                 : 'rgb(232 226 226)',color: props.mode === 'dark' || props.mode === 'primary' || props.mode === 'success' || props.mode === 'warning' ? 'white' : 'black'}} value={text} onChange={handleOnChange} id="myBox" rows="8"></textarea>
         </div>
-        <button className={`btn btn-${props.mode ==='light'? 'primary' : props.mode} mx-2`} onClick={handleUPclick}>Convert To Uppercase</button>
-        <button className={`btn btn-${props.mode ==='light'? 'primary' : props.mode} mx-2`} onClick={handleLWclick}>Convert To Lowercase</button>
-        <button className={`btn btn-${props.mode ==='light'? 'primary' : props.mode} mx-2`} onClick={handleExtraSpaces}>Remove Extra Spaces</button>
-        <button className={`btn btn-${props.mode ==='light'? 'primary' : props.mode} mx-2`} onClick={handleCopy}>Copy Text</button>
-        <button className={`btn btn-${props.mode ==='light'? 'primary' : props.mode} mx-2`} onClick={handleClearText}>Clear Text</button>
+        <button className={`btn btn-${props.mode ==='light'? 'primary' : props.mode} mx-2 my-1`} onClick={handleUPclick}>Convert To Uppercase</button>
+        <button className={`btn btn-${props.mode ==='light'? 'primary' : props.mode} mx-2 my-1`} onClick={handleLWclick}>Convert To Lowercase</button>
+        <button className={`btn btn-${props.mode ==='light'? 'primary' : props.mode} mx-2 my-1`} onClick={handleExtraSpaces}>Remove Extra Spaces</button>
+        <button className={`btn btn-${props.mode ==='light'? 'primary' : props.mode} mx-2 my-1`} onClick={handleCopy}>Copy Text</button>
+        <button className={`btn btn-${props.mode ==='light'? 'primary' : props.mode} mx-2 my-1`} onClick={handleClearText}>Clear Text</button>
         
         
         
