@@ -73,8 +73,8 @@ function App() {
     <Navbar title="TextLogy" mode={mode} toggleMode={toggleMode} textcolorSwitch={textcolorSwitch} switchColor={switchColor}/>
     <Alert alert= {alert}/>
     <div className="container my-3"><TextForm heading="Enter you text to analyze" showAlert={showAlert} mode={mode}/></div>
-      <Footer/>
-      
+     
+      <div><Footer/></div>
       
       
     </>
