@@ -27,10 +27,7 @@ export default function TextForm(props) {
           props.showAlert("Cleard all text!", "success")
       };
       const handleCopy = ()=>{
-        var text = document.getElementById("myBox");
-        props.showAlert("Copied all text!", "success")
-        text.select();
-        navigator.clipboard.writeText(text.value);
+        navigator.clipboard.writeText(text);
         props.showAlert("Copied text to clipboard!", "success")
       };
       const handleExtraSpaces = ()=>{
@@ -45,7 +42,7 @@ export default function TextForm(props) {
 
   return (
     <>
-    <div className="container my-4" style={{color: props.mode === 'dark' || props.mode === 'primary' || props.mode === 'success' || props.mode === 'warning' ? 'white' : 'black',
+  <div className="container my-4" style={{color: props.mode === 'dark' || props.mode === 'primary' || props.mode === 'success' || props.mode === 'warning' ? 'white' : 'black',
         }}>
         <h1>{props.heading}</h1>
         <div className="my-3">
@@ -59,16 +56,16 @@ export default function TextForm(props) {
                 ? '#ad840b' 
                 : 'rgb(232 226 226)',color: props.mode === 'dark' || props.mode === 'primary' || props.mode === 'success' || props.mode === 'warning' ? 'white' : 'black'}} value={text} onChange={handleOnChange} id="myBox" rows="8"></textarea>
         </div>
-        <button className={`btn btn-${props.mode ==='light'? 'primary' : props.mode} mx-2 my-1`} onClick={handleUPclick}>Convert To Uppercase</button>
-        <button className={`btn btn-${props.mode ==='light'? 'primary' : props.mode} mx-2 my-1`} onClick={handleLWclick}>Convert To Lowercase</button>
-        <button className={`btn btn-${props.mode ==='light'? 'primary' : props.mode} mx-2 my-1`} onClick={handleExtraSpaces}>Remove Extra Spaces</button>
-        <button className={`btn btn-${props.mode ==='light'? 'primary' : props.mode} mx-2 my-1`} onClick={handleCopy}>Copy Text</button>
-        <button className={`btn btn-${props.mode ==='light'? 'primary' : props.mode} mx-2 my-1`} onClick={handleClearText}>Clear Text</button>
+        <button disabled={text.length===0} className={`btn btn-${props.mode ==='light'? 'primary' : props.mode} mx-2 my-2`} onClick={handleUPclick}>Convert To Uppercase</button>
+        <button disabled={text.length===0} className={`btn btn-${props.mode ==='light'? 'primary' : props.mode} mx-2 my-2`} onClick={handleLWclick}>Convert To Lowercase</button>
+        <button disabled={text.length===0} className={`btn btn-${props.mode ==='light'? 'primary' : props.mode} mx-2 my-2`} onClick={handleExtraSpaces}>Remove Extra Spaces</button>
+        <button disabled={text.length===0} className={`btn btn-${props.mode ==='light'? 'primary' : props.mode} mx-2 my-2`} onClick={handleCopy}>Copy Text</button>
+        <button disabled={text.length===0} className={`btn btn-${props.mode ==='light'? 'primary' : props.mode} mx-2 my-2`} onClick={handleClearText}>Clear Text</button>
         
         
         
     </div>
-    <div className="container my-3" style={{color: props.mode === 'dark' || props.mode === 'primary' || props.mode === 'success' || props.mode === 'warning' ? 'white' : 'black',paddingBottom: '70px' 
+    <div className="container" style={{color: props.mode === 'dark' || props.mode === 'primary' || props.mode === 'success' || props.mode === 'warning' ? 'white' : 'black',paddingBottom:"50px"
 }}>
         <h2>Your text summary</h2>
         <p>{text.trim().split(/\s+/).filter(Boolean).length} Words and {text.replace(/(\r\n|\n|\r)/gm, "").length} Characters</p>

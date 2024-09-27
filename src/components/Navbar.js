@@ -7,7 +7,7 @@ export default function Navbar(props) {
   return (
     <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`} style={{border:"1px solid black"}}>
         <div className="container-fluid" >
-          <a className="navbar-brand" href="/textlogy">
+          <a className="navbar-brand" href="#">
             <b>{props.title}</b>
           </a>
           <button
@@ -29,46 +29,18 @@ export default function Navbar(props) {
                   Home
                 </a>
               </li>
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <a className="nav-link" href="/about">
                   About
                 </a>
-              </li>
+              </li> */}
             </ul>
-            <div className="modeCheckBox mx-5" style={{display: "flex"}}>
-            <div className="form-check mx-1">
-                <input className="form-check-input" type="radio" name="exampleRadios" onChange={props.switchColor} id="exampleRadios1" value="option1"/>
-                <label className={`form-check-label text-${props.mode === 'warning' || props.mode === 'success' || props.mode === 'primary' ? 'dark' : 'primary'}`} htmlFor="exampleRadios1">
-                  <b>Blue</b>
-                </label>
-              </div>
-              <div className="form-check mx-1">
-                <input className="form-check-input" type="radio" name="exampleRadios" onChange={props.switchColor} id="exampleRadios2" value="option2"/>
-                <label className={`form-check-label text-${ props.mode === 'primary' || props.mode === 'warning' || props.mode === 'success' ? 'dark' : 'success'}`} htmlFor="exampleRadios2">
-                  <b>Green</b>
-                </label>
-              </div>
-              <div className="form-check mx-1">
-                <input className="form-check-input" type="radio" name="exampleRadios" onChange={props.switchColor} id="exampleRadios3" value="option3" />
-                <label className={`form-check-label text-${ props.mode === 'primary' || props.mode === 'success' || props.mode === 'warning' ? 'dark' : 'warning'}`} htmlFor="exampleRadios3">
-                  <b>Yellow</b>
-                </label>
-              </div>
-            </div>
-            {/* <form className="d-flex" role="search">
-              <input
-                className="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button className="btn btn-primary" type="submit">
-                Search
-              </button>
-            </form> */}
-            <div className={`form-check form-switch text-${props.mode === 'light' || props.mode === 'primary' || props.mode === 'success' || props.mode === 'warning' ? 'dark' : 'light'}`}>
-            <input className="form-check-input" onClick={props.toggleMode} type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
-            <label className="form-check-label" htmlFor="flexSwitchCheckDefault"><b>{props.textcolorSwitch}</b></label>
+            <div className="d-flex">
+              <div className="bg-light rounded mx-2" onClick={()=>{props.switchColor('light')}} style={{height:"20px",width:"20px",cursor:'pointer'}}></div>
+              <div className="bg-primary rounded mx-2" onClick={()=>{props.switchColor('primary')}} style={{height:"20px",width:"20px",cursor:'pointer'}}></div>
+              <div className="bg-success rounded mx-2" onClick={()=>{props.switchColor('success')}} style={{height:"20px",width:"20px",cursor:'pointer'}}></div>
+              <div className="bg-warning rounded mx-2" onClick={()=>{props.switchColor('warning')}} style={{height:"20px",width:"20px",cursor:'pointer'}}></div>              
+              <div className="bg-dark rounded mx-2" onClick={()=>{props.switchColor('dark')}} style={{height:"20px",width:"20px",cursor:'pointer'}}></div>
             </div>
           </div>
         </div>
